@@ -3,4 +3,5 @@ export const state = {
   loading: false,
   search: "",
   language: "en",
+  sortOrder: { value: "", label: "None" },
 };

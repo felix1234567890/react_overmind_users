@@ -13,7 +13,11 @@
     "overmind-react": "^26.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-select": "^3.1.0",
+    "i18next": "^19.4.4",
+    "i18next-xhr-backend": "^3.2.2",
+    "react-i18next": "^11.4.0"
   },
   "scripts": {
     "start": "concurrently \"overmind-devtools\" \"react-scripts start\"",
