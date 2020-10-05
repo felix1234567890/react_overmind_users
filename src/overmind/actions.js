@@ -1,6 +1,8 @@
 export const loadUsers = async ({ effects, state }) => {
   state.loading = true;
-  state.users = await effects.getUsers();
+  const result = await effects.getUsers();
+  const users = effects.shuffleUsers(result);
+  state.users = users;
   state.loading = false;
 };
 export const setSearch = ({ state }, value) => {

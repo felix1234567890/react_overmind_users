@@ -16,6 +16,7 @@ const Filters = () => {
     { value: "female", label: t("female") },
   ];
   const { sortOrder } = useState();
+
   return (
     <div className="sortBy">
       <span>Sort by: </span>

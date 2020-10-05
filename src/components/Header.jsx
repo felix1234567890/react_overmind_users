@@ -1,20 +1,23 @@
 import React from "react";
 import { useActions } from "../overmind";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { setSearch, setLanguage } = useActions();
+  const { t } = useTranslation();
+
   return (
     <header className="header">
-      <div className="header__title">Users Search app</div>
+      <div className="header__title">{t("headerTitle")}</div>
       <div className="header__search">
         <input
           type="search"
-          placeholder="Search by country"
+          placeholder={t("searchText")}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <span onClick={setLanguage} className="language">
-        EN
+        {t("lng")}
       </span>
     </header>
   );
