@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 import { useState as useOvermindState } from "../overmind";
 import UserItem from "./UserItem";
 
@@ -70,5 +71,12 @@ const UsersList = ({ setPagination, pagination }) => {
     </div>
   );
 };
-
+UsersList.propTypes = {
+  setPagination: PropTypes.func.isRequired,
+  pagination: PropTypes.shape({
+    pageNumber: PropTypes.number.isRequired,
+    itemsPerPage: PropTypes.number.isRequired,
+    pageCount: PropTypes.number.isRequired,
+  }),
+};
 export default UsersList;

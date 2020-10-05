@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
 const UserItem = ({ photo, name, email, country, gender, age }) => {
@@ -23,6 +24,15 @@ const UserItem = ({ photo, name, email, country, gender, age }) => {
       </div>
     </article>
   );
+};
+
+UserItem.propTypes = {
+  photo: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  gender: PropTypes.oneOf(["male", "female"]).isRequired,
+  age: PropTypes.number.isRequired,
 };
 
 export default UserItem;

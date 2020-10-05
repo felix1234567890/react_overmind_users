@@ -6,6 +6,9 @@ import { useActions, useState } from "../overmind";
 
 const Filters = () => {
   const { t } = useTranslation();
+  const { sortOrder } = useState();
+  const { setSort } = useActions();
+
   const options = [
     { value: "", label: t("none") },
     { value: "asc", label: t("ageAsc") },
@@ -15,12 +18,10 @@ const Filters = () => {
     { value: "male", label: t("male") },
     { value: "female", label: t("female") },
   ];
-  const { sortOrder } = useState();
-  const { setSort } = useActions();
 
   return (
     <div className="sortBy">
-      <span>Sort by: </span>
+      <span>{t("sortBy")} </span>
       <Select
         styles={selectStyles}
         defaultValue={options[0]}
