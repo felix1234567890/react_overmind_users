@@ -10,3 +10,21 @@ export const shuffleUsers = (users) => {
   }
   return users;
 };
+export const paginateUsers = (users, pageNumber = 1, itemsPerPage = 6) => {
+  const skip = (pageNumber - 1) * itemsPerPage;
+  if (users.length > 0) {
+    const shownUsers = users.slice(skip, skip + itemsPerPage);
+    return shownUsers;
+  } else return [];
+};
+
+export const filterUsers = (users, value) => {
+  const val = new RegExp(value.toLowerCase(), "g");
+  const searchedUsers = users.filter((user) => {
+    console.log(user);
+    if (user.country.toLowerCase().match(val)) return true;
+    return false;
+  });
+  searchedUsers.sort((a, b) => a.country - b.country);
+  return searchedUsers;
+};
