@@ -14,6 +14,9 @@ export const loadUsers = async ({ effects, state }) => {
 export const setSearch = ({ state }, value) => {
   state.search = value;
 };
+export const setSort = ({ state }, value) => {
+  state.sortOrder = value;
+};
 export const setLanguage = ({ state }) => {
   state.language === "en" ? (state.language = "hr") : (state.language = "en");
 };

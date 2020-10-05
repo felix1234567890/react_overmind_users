@@ -28,3 +28,37 @@ export const filterUsers = (users, value) => {
   searchedUsers.sort((a, b) => a.country - b.country);
   return searchedUsers;
 };
+export const sortUsers = (users, { value }) => {
+  let sortedUsers;
+  switch (value) {
+    case "desc":
+      sortedUsers = users.sort((a, b) => {
+        return b.age - a.age;
+      });
+      break;
+    case "asc":
+      sortedUsers = users.sort((a, b) => {
+        return a.age - b.age;
+      });
+      break;
+    case "under40":
+      sortedUsers = users
+        .filter((user) => user.age < 40)
+        .sort((a, b) => a.age - b.age);
+      break;
+    case "over40":
+      sortedUsers = users
+        .filter((user) => user.age > 40)
+        .sort((a, b) => a.age - b.age);
+      break;
+    case "female":
+      sortedUsers = users.filter((user) => user.gender === "female");
+      break;
+    case "male":
+      sortedUsers = users.filter((user) => user.gender === "male");
+      break;
+    default:
+      return users;
+  }
+  return sortedUsers;
+};

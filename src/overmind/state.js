@@ -1,5 +1,5 @@
 import { derived } from "overmind";
-import { filterUsers } from "./effects";
+import { filterUsers, sortUsers } from "./effects";
 export const state = {
   users: [],
   loading: false,
@@ -14,5 +14,9 @@ export const state = {
   filteredUsers: derived(({ users, search }) => {
     if (!search) return [];
     return filterUsers(users, search);
+  }),
+  sortedUsers: derived(({ users, sortOrder }) => {
+    if (!sortOrder.value) return [];
+    return sortUsers([...users], sortOrder);
   }),
 };

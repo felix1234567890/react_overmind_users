@@ -2,7 +2,7 @@ import React from "react";
 import selectStyles from "../selectStyles";
 import Select from "react-select";
 import { useTranslation } from "react-i18next";
-import { useState } from "../overmind";
+import { useActions, useState } from "../overmind";
 
 const Filters = () => {
   const { t } = useTranslation();
@@ -16,6 +16,7 @@ const Filters = () => {
     { value: "female", label: t("female") },
   ];
   const { sortOrder } = useState();
+  const { setSort } = useActions();
 
   return (
     <div className="sortBy">
@@ -24,7 +25,7 @@ const Filters = () => {
         styles={selectStyles}
         defaultValue={options[0]}
         value={sortOrder}
-        // onChange={sort}
+        onChange={setSort}
         options={options}
       />
     </div>
