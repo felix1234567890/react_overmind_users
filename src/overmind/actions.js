@@ -3,6 +3,9 @@ export const loadUsers = async ({ effects, state }) => {
   const result = await effects.getUsers();
   const users = effects.shuffleUsers(result);
   state.users = users;
+  state.pagination.pageCount = Math.ceil(
+    state.users.length / state.pagination.itemsPerPage
+  );
   state.loading = false;
 };
 export const setSearch = ({ state }, value) => {

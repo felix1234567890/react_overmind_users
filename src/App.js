@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useState } from "./overmind";
 import Filters from "./components/Filters";
 import UsersList from "./components/UsersList";
+import Pagination from "./components/Pagination";
 
 function App() {
   const { language } = useState();
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Filters />
       <UsersList />
+      <Pagination />
     </>
   );
 }
