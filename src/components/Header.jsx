@@ -1,9 +1,11 @@
 import React from "react";
 import { useActions } from "../overmind";
 import { useTranslation } from "react-i18next";
+import { useUsersStore } from "../zustand";
 
 const Header = () => {
   const { setSearch, setLanguage } = useActions();
+  const filterUsers = useUsersStore(state=>state.filterUsers)
   const { t } = useTranslation();
 
   return (
@@ -13,7 +15,7 @@ const Header = () => {
         <input
           type="search"
           placeholder={t("searchText")}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => filterUsers(e.target.value)}
         />
       </div>
       <span onClick={setLanguage} className="language">

@@ -1,5 +1,6 @@
 import { derived } from 'overmind'
 import { filterUsers, sortUsers } from './effects'
+
 export const state = {
   users: [],
   loading: false,

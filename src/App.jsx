@@ -6,6 +6,7 @@ import { useOvermindState } from "./overmind";
 import Filters from "./components/Filters";
 import UsersList from "./components/UsersList";
 import Pagination from "./components/Pagination";
+import { useUsersStore } from "./zustand";
 
 function App() {
   const { language } = useOvermindState();
@@ -15,6 +16,12 @@ function App() {
     itemsPerPage: 6,
     pageCount: 0,
   });
+  // const loadUsers = useUsersStore((state) => state.loadUsers);
+  // useEffect(() => {
+  //   (async () => {
+  //     await loadUsers();
+  //   })();
+  // }, []);
 
   useEffect(() => {
     i18n.changeLanguage(language);
