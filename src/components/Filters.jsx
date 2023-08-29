@@ -2,11 +2,11 @@ import React from "react";
 import selectStyles from "../selectStyles";
 import Select from "react-select";
 import { useTranslation } from "react-i18next";
-import { useActions, useState } from "../overmind";
+import { useActions, useOvermindState } from "../overmind";
 
 const Filters = () => {
   const { t } = useTranslation();
-  const { sortOrder } = useState();
+  const { sortOrder } = useOvermindState();
   const { setSort } = useActions();
 
   const options = [

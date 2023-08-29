@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header";
 import { useTranslation } from "react-i18next";
-import { useState as useOvermindState } from "./overmind";
+import { useOvermindState } from "./overmind";
 import Filters from "./components/Filters";
 import UsersList from "./components/UsersList";
 import Pagination from "./components/Pagination";
